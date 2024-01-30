@@ -34,26 +34,31 @@ function App() {
     const [state, dispatch] = useReducer(reducer, intialState)
     return (
         <>
-            <div>
-                <h1>Counter</h1>
-                <p>Count: {state.count} </p>
-            </div>
-            <div>
-                <button
-                    onClick={() =>
-                        dispatch({ type: ActionType.increment, payload: 0 })
-                    }
-                >
-                    +
-                </button>
-                <button
-                    onClick={() =>
-                        dispatch({ type: ActionType.decrement, payload: 0 })
-                    }
-                >
-                    -
-                </button>
-            </div>
+            <section className="flex gap-2 flex-col items-center m-6">
+                <div className="text-white text-lg">
+                    <h1>Counter</h1>
+                    <p>
+                        Count:{' '}
+                        <span className="text-yellow-500">{state.count}</span>{' '}
+                    </p>
+                </div>
+                <div className="flex gap-2">
+                    <button
+                        onClick={() =>
+                            dispatch({ type: ActionType.decrement, payload: 0 })
+                        }
+                    >
+                        -
+                    </button>
+                    <button
+                        onClick={() =>
+                            dispatch({ type: ActionType.increment, payload: 0 })
+                        }
+                    >
+                        +
+                    </button>
+                </div>
+            </section>
         </>
     )
 }
