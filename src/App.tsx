@@ -1,19 +1,6 @@
 import { useReducer } from 'react'
+import { StateType, Action, ActionType } from './../types.ts'
 import './index.scss'
-
-type StateType = {
-    count: number
-}
-
-enum ActionType {
-    increment = 'increment',
-    decrement = 'decrement',
-}
-
-type Action = {
-    type: ActionType
-    payload: number
-}
 
 const intialState: StateType = {
     count: 0,
